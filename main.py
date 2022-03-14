@@ -1,7 +1,7 @@
 import os
 import random
 import sys
-
+# Manage errors
 
 class rock_paper_scissor():
 
@@ -39,14 +39,18 @@ class rock_paper_scissor():
             if self.player_move == self.cpu_move:
                 print("\nIt's a Tie!!!")
                 self.ties += 1
-            
+
+            # In case of win
+            elif self.combinations[self.player_move] != self.cpu_move:
+                print("\nYou're the WINNER!!!")
+                self.wins += 1
+
+            # In case of lose
             elif self.combinations[self.player_move] == self.cpu_move:
                 print("\nComputer wins!!!")
                 self.losses += 1
 
-            else:
-                print("\nYou're the WINNER!!!")
-                self.wins += 1
+            
 
 
 if __name__ == '__main__':
